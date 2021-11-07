@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 flex items-center justify-between">
+            <img src="https://static.tildacdn.com/tild3838-3263-4439-a463-326632616534/addlogo.svg" class="max-h-8" alt="Addreality">
+            <div class="py-4 relative">
+                <div class="flex text-sm text-gray-800 font-medium space-x-10">
+                    <span class="headerNavbarDropdownLink hover:bg-gray-100 px-2.5 py-1.5 rounded transition flex items-center cursor-pointer">Продукт<svg class="ml-1 text-gray-500" style="fill: currentcolor;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg></span>
+                    <a class="hover:bg-gray-100 px-2.5 py-1.5 rounded transition flex items-center">Решения<svg class="ml-1 text-gray-500" style="fill: currentcolor;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg></a>
+                    <a class="hover:bg-gray-100 px-2.5 py-1.5 rounded transition flex items-center">Ресурсы<svg class="ml-1 text-gray-500" style="fill: currentcolor;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg></a>
+                    <a class="hover:bg-gray-100 px-2.5 py-1.5 rounded transition">Тарифы</a>
+                    <a class="hover:bg-gray-100 px-2.5 py-1.5 rounded transition">Оборудование</a>
+                </div>
+                <div id="productHeaderDropdown" style="display: none" class="headerDropdown absolute border top-16 mt-2 bg-white shadow-xl left-0 rounded-md w-full overflow-hidden">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <span class="p-4 block uppercase text-xs font-medium text-gray-500">Платформа</span>
+                            <hr>
+                            <div class="grid grid-cols-1 gap-1 p-2">
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="fill: currentcolor;"><path fill="none" d="M0 0H24V24H0z"/><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2zm-3.566 15.604c.881-.556 1.676-1.109 2.42-1.701C18.335 14.533 20 11.943 20 9c0-2.36-1.537-4-3.5-4-1.076 0-2.24.57-3.086 1.414L12 7.828l-1.414-1.414C9.74 5.57 8.576 5 7.5 5 5.56 5 4 6.656 4 9c0 2.944 1.666 5.533 4.645 7.903.745.592 1.54 1.145 2.421 1.7.299.189.595.37.934.572.339-.202.635-.383.934-.571z"/></svg>
+                                    </div><span class="text-sm font-medium ml-4">Почему Addreality</span>
+                                </div>
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="fill: currentcolor;"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0v-3a1 1 0 0 1 1-1zm8.66-10a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5A1 1 0 0 1 20.66 7zM7.67 14.5a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5a1 1 0 0 1 1.366.366zM20.66 17a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 0 1 1-1.732l2.598 1.5A1 1 0 0 1 20.66 17zM7.67 9.5a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 1 1 1-1.732l2.598 1.5A1 1 0 0 1 7.67 9.5z"/></svg>
+                                    </div><span class="text-sm font-medium ml-4">Как это работает</span>
+                                </div>
+
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="fill: currentcolor;"><path fill="none" d="M0 0h24v24H0z"/><path d="M6.75 2.5A4.25 4.25 0 0 1 11 6.75V11H6.75a4.25 4.25 0 1 1 0-8.5zM9 9V6.75A2.25 2.25 0 1 0 6.75 9H9zm-2.25 4H11v4.25A4.25 4.25 0 1 1 6.75 13zm0 2A2.25 2.25 0 1 0 9 17.25V15H6.75zm10.5-12.5a4.25 4.25 0 1 1 0 8.5H13V6.75a4.25 4.25 0 0 1 4.25-4.25zm0 6.5A2.25 2.25 0 1 0 15 6.75V9h2.25zM13 13h4.25A4.25 4.25 0 1 1 13 17.25V13zm2 2v2.25A2.25 2.25 0 1 0 17.25 15H15z"/></svg>
+                                    </div><span class="text-sm font-medium ml-4">Все возможности</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="p-4 block uppercase text-xs font-medium text-gray-500">Экосистема</span>
+                            <hr>
+                            <div class="grid grid-cols-1 gap-1 p-2">
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 17" style="fill: currentcolor;"><path fill="currentColor" fill-rule="evenodd" d="M4.923 14.796l8.123-4.617a1.924 1.924 0 000-3.358L4.923 2.204C3.61 1.458 1.97 2.391 1.97 3.883v9.234c0 1.492 1.641 2.425 2.954 1.679zm9.108-2.938c2.625-1.493 2.625-5.223 0-6.716L5.908.525C3.282-.967 0 .898 0 3.883v9.234c0 2.985 3.282 4.85 5.908 3.358l8.123-4.617z" clip-rule="evenodd"></path></svg>
+                                    </div><span class="text-sm font-medium ml-4">Addreality Player</span>
+                                </div>
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="00 0 14 15" width="18" height="18" style="fill: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 3.20071C4 2.24734 4.67292 1.42654 5.60777 1.23952L11.6078 0.0395124C12.8453 -0.207985 14 0.738609 14 2.00069V10.0611C14 11.4419 12.8807 12.5611 11.5 12.5611H11C9.89543 12.5611 9 11.6657 9 10.5611C9 9.45657 9.89543 8.56112 11 8.56112H13V4.76113L5 6.36111V12.0611C5 13.4419 3.88071 14.5611 2.5 14.5611H2C0.895432 14.5611 0 13.6657 0 12.5611C0 11.4566 0.895432 10.5611 2 10.5611H4V3.20071ZM5.80388 2.22012L11.8039 1.0201C12.4227 0.896385 13 1.36965 13 2.00069V3.74129L5 5.34127V3.20071C5 2.72402 5.33646 2.31362 5.80388 2.22012ZM2 11.5611H4V12.0611C4 12.8895 3.32843 13.5611 2.5 13.5611H2C1.44772 13.5611 1 13.1134 1 12.5611C1 12.0088 1.44772 11.5611 2 11.5611ZM13 9.56112H11C10.4477 9.56112 10 10.0088 10 10.5611C10 11.1134 10.4477 11.5611 11 11.5611H11.5C12.3284 11.5611 13 10.8895 13 10.0611V9.56112Z"></path></svg>
+                                    </div><span class="text-sm font-medium ml-4">Addreality Sound</span>
+                                </div>
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18" style="fill: currentcolor;"><path d="M3.5 0C1.567 0 0 1.567 0 3.5H1C1 2.11929 2.11929 1 3.5 1V0Z"></path><path d="M0 14.5C0 16.433 1.567 18 3.5 18V17C2.11929 17 1 15.8807 1 14.5H0Z"></path><path d="M18 14.5C18 16.433 16.433 18 14.5 18V17C15.8807 17 17 15.8807 17 14.5H18Z"></path><path d="M18 3.5C18 1.567 16.433 0 14.5 0V1C15.8807 1 17 2.11929 17 3.5H18Z"></path><path d="M7.75 11C7.75 11.4142 7.41421 11.75 7 11.75C6.58579 11.75 6.25 11.4142 6.25 11C6.25 10.5858 6.58579 10.25 7 10.25C7.41421 10.25 7.75 10.5858 7.75 11Z"></path><path d="M11 11.75C11.4142 11.75 11.75 11.4142 11.75 11C11.75 10.5858 11.4142 10.25 11 10.25C10.5858 10.25 10.25 10.5858 10.25 11C10.25 11.4142 10.5858 11.75 11 11.75Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.02905 9.05817C2.98259 8.55827 2.45221 7.59691 2.20426 6.67133C1.95042 5.72378 1.96999 4.74265 2.06584 4.11663C2.09474 3.92788 2.22862 3.77208 2.41087 3.71509C2.59311 3.65811 2.7919 3.7099 2.92318 3.84856C3.1968 4.13758 3.66045 4.41534 4.25698 4.42093C4.84494 4.42643 5.64411 4.16779 6.59322 3.23023C7.98555 1.85485 9.68929 1.80255 10.989 2.25476C11.6341 2.47921 12.1992 2.83287 12.5997 3.23168C12.8625 3.49337 13.1027 3.82533 13.1966 4.1872C13.4083 4.26885 13.6061 4.39973 13.7802 4.55531C14.0849 4.82757 14.3591 5.21081 14.5693 5.68101C14.9915 6.62575 15.1694 7.95114 14.7972 9.56004C14.7598 9.7218 14.6445 9.85443 14.4896 9.91403C14.3298 9.97548 14.1655 10.0059 14 9.99906V11.8488C14 14.6781 11.7769 17 9 17C6.22313 17 4 14.6781 4 11.8488V9.61629C4 9.42784 4.00984 9.24162 4.02905 9.05817ZM12.9952 9.40992C12.9984 9.47826 13 9.54706 13 9.61629V11.8488C13 14.1572 11.1937 16 9 16C6.8063 16 5 14.1572 5 11.8488V9.61629C5 9.54722 5.00162 9.47856 5.00483 9.41037C6.97022 9.91995 8.41526 9.08051 9.3401 8.54325C9.38594 8.51663 9.43062 8.49067 9.4739 8.46573C10.608 7.81219 11.3201 7.86226 11.7522 8.0401C12.2124 8.22953 12.4928 8.61815 12.6496 8.88923C12.7508 9.06413 12.8643 9.24587 12.9952 9.40992ZM13.9316 8.76289C13.9283 8.74232 13.9249 8.7218 13.9213 8.70131L13.7364 8.73351C13.6701 8.64356 13.5969 8.52973 13.5153 8.38853C13.3213 8.05324 12.9003 7.43126 12.1328 7.11538C11.3373 6.78792 10.2957 6.83799 8.97461 7.5993L8.85857 7.66638C7.81442 8.27094 6.47166 9.0484 4.51642 8.18177C3.79356 7.86137 3.38058 7.19792 3.1702 6.41257C3.05384 5.97822 3.0064 5.52846 3.0006 5.12528C3.35442 5.29978 3.77395 5.41645 4.24762 5.42088C5.16774 5.42949 6.21002 5.0144 7.29598 3.94165C8.35887 2.8917 9.63647 2.84297 10.6604 3.19923C11.1772 3.37902 11.6096 3.65697 11.8941 3.94029C12.2032 4.24805 12.2461 4.46249 12.2371 4.52498C12.2163 4.66859 12.2589 4.81413 12.3539 4.92382C12.4489 5.03352 12.5868 5.09655 12.7319 5.09655C12.7847 5.09655 12.9231 5.13044 13.1139 5.30097C13.2969 5.4645 13.4938 5.7255 13.6563 6.08902C13.9346 6.71175 14.1014 7.61464 13.9316 8.76289Z"></path></svg>
+                                    </div><span class="text-sm font-medium ml-4">Addreality Camera</span>
+                                </div>
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><circle cx="9" cy="9.00006" r="9" fill="#0023FF"></circle><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0214 10.3602C9.83066 10.8141 9.56684 11.2034 9.22851 11.5303C8.879 11.8572 8.46688 12.1209 7.99143 12.3C7.50479 12.4894 6.97642 12.5845 6.3944 12.5845H4.01562V5.20667H6.3944C6.97642 5.20667 7.50479 5.30101 7.99143 5.4808C8.46688 5.67024 8.879 5.93397 9.22851 6.26011C9.56684 6.58699 9.83066 6.97702 10.0214 7.43019C10.2115 7.88337 10.3069 8.36849 10.3069 8.89521C10.3069 9.42268 10.2115 9.90706 10.0214 10.3602ZM8.99525 7.80982C8.85813 7.48294 8.67853 7.19841 8.43558 6.95622C8.19189 6.72443 7.89604 6.54539 7.54727 6.40795C7.1985 6.27125 6.81769 6.20811 6.3944 6.20811H5.12602V11.5831H6.3944C6.81769 11.5831 7.1985 11.5199 7.54727 11.3832C7.89604 11.2562 8.19189 11.0771 8.43558 10.8349C8.6681 10.5928 8.85813 10.3075 8.99525 9.98135C9.13312 9.65447 9.19646 9.28524 9.19646 8.89521C9.19646 8.50519 9.13312 8.1367 8.99525 7.80982ZM10.5356 11.6566C10.6518 11.5407 10.8106 11.4776 10.9902 11.4776C11.1698 11.4776 11.3285 11.5407 11.4448 11.6566C11.561 11.7733 11.6244 11.9308 11.6244 12.1105C11.6244 12.2896 11.561 12.4478 11.4448 12.5637C11.3285 12.6796 11.1698 12.7428 10.9902 12.7428C10.8106 12.7428 10.6518 12.6796 10.5356 12.5637C10.4193 12.4478 10.3552 12.2896 10.3552 12.1105C10.3552 11.9308 10.4193 11.7733 10.5356 11.6566ZM12.7555 12.6015V7.00669C12.6816 7.07002 12.576 7.1228 12.4599 7.16503C12.3649 7.20725 12.2276 7.23892 12.0693 7.27059C11.911 7.30226 11.7104 7.32337 11.4887 7.32337V6.47887C11.6682 6.47887 11.8476 6.43665 12.0165 6.36275C12.1749 6.28886 12.3227 6.19385 12.4493 6.07773C12.576 5.96161 12.6816 5.83494 12.7555 5.67659C12.8294 5.52881 12.861 5.37046 12.861 5.21212H13.8639V12.6015H12.7555Z" fill="white"></path></svg>
+                                    </div><span class="text-sm font-medium ml-4">Addreality x Dooh.one</span>
+                                </div>
+                                <div class="p-4 hover:bg-gray-50 rounded flex items-center">
+                                    <div class="bg-indigo-50 p-2 rounded">
+                                        <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 19" width="18" height="18" style="fill: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.000725446 18.0005L0.000725403 13.8314C0.000725214 13.2996 0.212518 12.7897 0.589289 12.4144L3.53262 9.48261L0.581637 6.51939C-0.193879 5.74066 -0.193879 4.47809 0.581638 3.69936L2.68793 1.58433C3.46345 0.805596 4.72081 0.805596 5.49633 1.58433L8.46711 4.56743L11.5162 1.53028C12.2977 0.751847 13.5619 0.753086 14.3419 1.53305L16.4826 3.67375C17.2571 4.44828 17.2645 5.70175 16.4992 6.48537L13.468 9.58903L16.4184 12.5516C17.1939 13.3304 17.1939 14.593 16.4184 15.3717L14.3121 17.4867C13.5365 18.2654 12.2792 18.2654 11.5037 17.4867L8.60118 14.5722L5.84141 17.3979C5.46507 17.7833 4.94922 18.0005 4.41059 18.0005H0.000725446ZM15.7754 4.38086L13.6347 2.24016C13.2448 1.85018 12.6127 1.84956 12.2219 2.23877L10.5807 3.87358L14.1582 7.45109L15.7838 5.78667C16.1664 5.39486 16.1627 4.76812 15.7754 4.38086ZM1.29501 13.1229L9.87219 4.5793L13.4594 8.16655L5.126 16.6992C4.93783 16.8919 4.67991 17.0005 4.41059 17.0005H1.00073L1.00073 13.8314C1.00073 13.5655 1.10662 13.3106 1.29501 13.1229ZM9.29643 13.8603L12.2058 16.7817C12.5935 17.1711 13.2222 17.1711 13.61 16.7817L15.7163 14.6667C16.104 14.2773 16.104 13.646 15.7163 13.2567L15.3343 12.8731L13.8536 14.3539L13.1465 13.6468L14.6287 12.1646L13.3385 10.869L11.8536 12.3539L11.3042 11.8045L9.29643 13.8603ZM5.14837 2.64495L4.79423 2.28934C4.40647 1.89997 3.77779 1.89997 3.39003 2.28934L1.28374 4.40437C0.895978 4.79373 0.895978 5.42502 1.28374 5.81439L4.23755 8.78044L6.26282 6.7631L5.64648 6.14676L7.1442 4.64905L5.85402 3.35352L4.35359 4.85395L3.64648 4.14684L5.14837 2.64495Z"></path></svg>
+                                    </div>
+                                    <span class="text-sm font-medium ml-4">Addreality Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100">
+                        <div class="p-6 flex items-center">
+                            <div class="bg-dark-blue p-2 rounded">
+                                <svg class="text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="fill: currentcolor;"><path fill="none" d="M0 0h24v24H0z"/><path d="M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z"/></svg>
+                            </div>
+                            <span class="text-sm font-medium ml-4">Техническим специалистам</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex space-x-5 font-medium">
+                <a href="" class="text-indigo-700 bg-indigo-50 hover:bg-indigo-100 px-4 py-1 rounded transition">
+                    Войти
+                </a>
+                <a href="" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-1 rounded transition">
+                    Начать бесплатно
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="background:url(img/hero-gradient.svg) no-repeat right top;">
+        <div class="backdrop-filter backdrop-blur-3xl">
+            <div class="container xl:max-w-screen-xl mx-auto px-4 py-24">
+                <div class="grid grid-cols-5 gap-14">
+                    <div class="col-span-3">
+                        <div class="flex items-center">
+                            <div class="py-12">
+                                <span class="font-medium text-4xl block">
+                                    Облачная digital signage платформа<br> с AI аналитикой и таргетированием.
+                                </span>
+                                <span class="text-xl text-gray-light-for-light block mt-4">Управляйте контентом на ваших экранах где бы вы ни находились.</span>
+                                <div class="flex space-x-5 font-medium mt-7">
+                                    <a href="" class="text-white bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded transition">
+                                        Начать бесплатно
+                                    </a>
+                                    <a href="" class="text-indigo-700 bg-indigo-50 hover:bg-indigo-100 px-6 py-3 rounded transition">
+                                        Как это работает
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="flex h-full items-center">
+                            <div class="screen-mockup-wrapper shadow-md">
+                                <div class="screen-mockup overflow-hidden">
+                                    <div id="screenMockupSlideshow" class="relative">
+                                        <div class="absolute">
+                                            <img class="object-cover w-full" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="">
+                                        </div>
+                                        <div class="absolute">
+                                            <img class="object-cover w-full" src="https://images.unsplash.com/photo-1548087713-b1fdffcfddff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="">
+                                        </div>
+                                        <div class="absolute">
+                                            <img class="object-cover w-full" src="https://images.unsplash.com/photo-1562281302-809108fd533c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-24">
+                    <div class="text-center">
+                        <span class="text-gray-light-for-light">
+                            Более 36000 экранов уже подключены к Addreality
+                        </span>
+                        <div class="flex justify-around items-center mt-10">
+                            <img src="img/logo-1.svg" alt="" class="w-28">
+                            <img src="img/logo-2.svg" alt="" class="w-28">
+                            <img src="img/logo-3.svg" alt="" class="w-28">
+                            <img src="img/logo-4.svg" alt="" class="w-28">
+                            <img src="img/logo-5.svg" alt="" class="w-28">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24 bg-black">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-300">Платформа для ваших задач.</span>
+            </div>
+            <div class="slider text-white font-medium text-3xl">
+                <div class="slide-track">
+                    <div>
+                        Управляйте рекламой
+                    </div>
+                    <div>
+                        Вовлекайте посетителей
+                    </div>
+                    <div>
+                        Воспроизводите имиджевый контент
+                    </div>
+                    <div>
+                        Включайте музыку
+                    </div>
+                    <div>
+                        Отображайте навигацию по зданию
+                    </div>
+                    <div>
+                        Делитесь новостями
+                    </div>
+                    <div>
+                        Запускайте промо кампании
+                    </div>
+                    <div>
+                        Создавайте интерактивные киоски
+                    </div>
+                    <div>
+                        Собирайте аналитику
+                    </div>
+                    <div>
+                        Таргетируйте контент
+                    </div>
+                    <div>
+                        Показывайте меню
+                    </div>
+                    <div>
+                        Обновляйте цифровые афиши
+                    </div>
+                    <div>
+                        Автоматизируйте контент
+                    </div>
+                    <div>
+                        Рассказывайте об интересных событиях
+                    </div>
+                    <div>
+                        Управляйте рекламой
+                    </div>
+                    <div>
+                        Вовлекайте посетителей
+                    </div>
+                    <div>
+                        Воспроизводите имиджевый контент
+                    </div>
+                    <div>
+                        Включайте музыку
+                    </div>
+                    <div>
+                        Отображайте навигацию по зданию
+                    </div>
+                    <div>
+                        Делитесь новостями
+                    </div>
+                    <div>
+                        Запускайте промо кампании
+                    </div>
+                    <div>
+                        Создавайте интерактивные киоски
+                    </div>
+                    <div>
+                        Собирайте аналитику
+                    </div>
+                    <div>
+                        Таргетируйте контент
+                    </div>
+                    <div>
+                        Показывайте меню
+                    </div>
+                    <div>
+                        Создайте цифровую афишу
+                    </div>
+                    <div>
+                        Автоматизируйте контент
+                    </div>
+                    <div>
+                        Рассказывайте об интересных событиях
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl block ">В облаке, а не на флешке.</span>
+                        <span class="text-xl text-gray-light-for-light block mt-4 ">Больше не нужно никуда ехать, чтобы обновить контент на экранах. Просто загрузите файлы на платформу.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 flex items-center hover:underline ">Как это работает <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+"><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    здесь будет визуализация
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24 bg-gray-50">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 gap-20">
+                <div class="flex flex-col items-center ">
+                    <img src="img/home-timeline.svg" alt=" " class="w-full ">
+                </div>
+                <div class="flex items-center ">
+                    <div class="">
+                        <span class="font-medium text-4xl block">Всё по расписанию.</span>
+                        <span class="text-white text-xl block mt-4 text-gray-light-for-light">Запускайте кампании в нужное время с помощью гибкого медиапланирования.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 inline-flex hover:underline items-center rounded">Подробнее о медиаплане <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+                            "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24 ">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl ">Распределяйте автоматически. </span>
+                        <span class="text-white text-xl block mt-4 text-gray-light-for-light">Удобно для рекламы. Циклы позволяют вам показывать контент равномерно с нужной переодичностью. Например, 4 раза в час.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 inline-flex hover:underline items-center rounded">Подробнее о циклах <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+                            "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex flex-col items-center ">
+                        <div class="w-3/4">
+                            <img src="img/home-cycles.svg" alt=" " class="w-full ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24 bg-gray-50">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex items-center ">
+                    <div>
+                        тут тоже будет визуализация, но пока её нет. Как говорится, Москва не сразу строилась
+                    </div>
+                </div>
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl block ">Собирайте статистику.</span>
+                        <span class="text-xl text-gray-light-for-light block mt-4 ">Каждое устройство автоматически отправляет отчет на платформу о воспроизведениях контента и рекламы.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 flex items-center hover:underline ">Подробнее об отчетах <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+        "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24 ">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl block ">Определяйте аудиторию.</span>
+                        <span class="text-xl text-gray-light-for-light block mt-4 ">С помощью расширения Addreality Camera вы можете таргетировать контент на ваших экранах по полу, возрасту и другим параметрам.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 inline-flex items-center hover:underline ">Подробнее об Addreality Camera <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+        "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+                <div class="flex w-full items-center gap-10">
+                    <div class="w-1/2 p-5">
+                        <div class="flex items-center mb-3 ">
+                            <div class="bg-indigo-50 rounded p-2 ">
+                                <svg class="text-indigo-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="24" height="24" style="fill: currentcolor;"><path d="M3.5 0C1.567 0 0 1.567 0 3.5H1C1 2.11929 2.11929 1 3.5 1V0Z"></path><path d="M0 14.5C0 16.433 1.567 18 3.5 18V17C2.11929 17 1 15.8807 1 14.5H0Z"></path><path d="M18 14.5C18 16.433 16.433 18 14.5 18V17C15.8807 17 17 15.8807 17 14.5H18Z"></path><path d="M18 3.5C18 1.567 16.433 0 14.5 0V1C15.8807 1 17 2.11929 17 3.5H18Z"></path><path d="M7.75 11C7.75 11.4142 7.41421 11.75 7 11.75C6.58579 11.75 6.25 11.4142 6.25 11C6.25 10.5858 6.58579 10.25 7 10.25C7.41421 10.25 7.75 10.5858 7.75 11Z"></path><path d="M11 11.75C11.4142 11.75 11.75 11.4142 11.75 11C11.75 10.5858 11.4142 10.25 11 10.25C10.5858 10.25 10.25 10.5858 10.25 11C10.25 11.4142 10.5858 11.75 11 11.75Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.02905 9.05817C2.98259 8.55827 2.45221 7.59691 2.20426 6.67133C1.95042 5.72378 1.96999 4.74265 2.06584 4.11663C2.09474 3.92788 2.22862 3.77208 2.41087 3.71509C2.59311 3.65811 2.7919 3.7099 2.92318 3.84856C3.1968 4.13758 3.66045 4.41534 4.25698 4.42093C4.84494 4.42643 5.64411 4.16779 6.59322 3.23023C7.98555 1.85485 9.68929 1.80255 10.989 2.25476C11.6341 2.47921 12.1992 2.83287 12.5997 3.23168C12.8625 3.49337 13.1027 3.82533 13.1966 4.1872C13.4083 4.26885 13.6061 4.39973 13.7802 4.55531C14.0849 4.82757 14.3591 5.21081 14.5693 5.68101C14.9915 6.62575 15.1694 7.95114 14.7972 9.56004C14.7598 9.7218 14.6445 9.85443 14.4896 9.91403C14.3298 9.97548 14.1655 10.0059 14 9.99906V11.8488C14 14.6781 11.7769 17 9 17C6.22313 17 4 14.6781 4 11.8488V9.61629C4 9.42784 4.00984 9.24162 4.02905 9.05817ZM12.9952 9.40992C12.9984 9.47826 13 9.54706 13 9.61629V11.8488C13 14.1572 11.1937 16 9 16C6.8063 16 5 14.1572 5 11.8488V9.61629C5 9.54722 5.00162 9.47856 5.00483 9.41037C6.97022 9.91995 8.41526 9.08051 9.3401 8.54325C9.38594 8.51663 9.43062 8.49067 9.4739 8.46573C10.608 7.81219 11.3201 7.86226 11.7522 8.0401C12.2124 8.22953 12.4928 8.61815 12.6496 8.88923C12.7508 9.06413 12.8643 9.24587 12.9952 9.40992ZM13.9316 8.76289C13.9283 8.74232 13.9249 8.7218 13.9213 8.70131L13.7364 8.73351C13.6701 8.64356 13.5969 8.52973 13.5153 8.38853C13.3213 8.05324 12.9003 7.43126 12.1328 7.11538C11.3373 6.78792 10.2957 6.83799 8.97461 7.5993L8.85857 7.66638C7.81442 8.27094 6.47166 9.0484 4.51642 8.18177C3.79356 7.86137 3.38058 7.19792 3.1702 6.41257C3.05384 5.97822 3.0064 5.52846 3.0006 5.12528C3.35442 5.29978 3.77395 5.41645 4.24762 5.42088C5.16774 5.42949 6.21002 5.0144 7.29598 3.94165C8.35887 2.8917 9.63647 2.84297 10.6604 3.19923C11.1772 3.37902 11.6096 3.65697 11.8941 3.94029C12.2032 4.24805 12.2461 4.46249 12.2371 4.52498C12.2163 4.66859 12.2589 4.81413 12.3539 4.92382C12.4489 5.03352 12.5868 5.09655 12.7319 5.09655C12.7847 5.09655 12.9231 5.13044 13.1139 5.30097C13.2969 5.4645 13.4938 5.7255 13.6563 6.08902C13.9346 6.71175 14.1014 7.61464 13.9316 8.76289Z"></path></svg>
+                            </div>
+                            <span class="font-medium inline-block ml-3 ">Портрет посетителя</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <div>
+                                Возраст
+                            </div>
+                            <div class="font-medium">
+                                20-25 лет
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <div>
+                                Пол
+                            </div>
+                            <div class="font-medium">
+                                Женский
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <div>
+                                Отдел
+                            </div>
+                            <div class="font-medium">
+                                Красота и здоровье
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/2 grid grid-cols-1 gap-10">
+                        <div class="shadow-md rounded p-4 flex items-center">
+                            <div class="bg-green-500 rounded-full p-1 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="fill: currentcolor;"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"/></svg>
+                            </div>
+                            <span class="block ml-3 text-sm">Женская косметика</span>
+                        </div>
+                        <div class="bg-gray-100 rounded p-4 flex items-center">
+                            <div class="bg-red-500 rounded-full p-1 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="fill: currentcolor;"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+                            </div>
+                            <span class="block ml-3 text-sm">Мужской шампунь</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24 bg-black">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-300">Подключите всё.</span>
+                <span class="text-xl text-white block mt-4 opacity-90">Addreality можно использовать с самыми разными устройствами.</span>
+            </div>
+            <div class="text-white flex flex-wrap gap-8 justify-center">
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Телевизоры</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Профессиональные дисплеи</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Светодиодные экраны</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Сенсорные киоски</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Менюборды</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Проекторы</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Планшеты</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Медиафасады</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Прикассовые экраны</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Пилоны</span>
+                <span class="px-5 py-4 rounded-full bg-gray-800 uppercase">Звук</span>
+            </div>
+        </div>
+    </div>
+    <div class="py-24">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl block ">Освободитесь от рутины.</span>
+                        <span class="text-xl text-gray-light-for-light block mt-4 ">Управляйте несколькими экранами, как одним. Объединяйте экраны в группы, чтобы обновлять контент и расписание сразу везде.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 inline-flex items-center hover:underline ">Подробнее о группах устройств <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+        "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    ну не придумал я пока эти три картинки
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-24  bg-gray-50">
+        <div class="container xl:max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex flex-col items-center ">
+                    <div class="w-3/4 grid grid-cols-1 gap-5">
+                        <div class="bg-white rounded shadow-md">
+                            <div class="p-5 flex items-center">
+                                <div class="text-indigo-600 bg-indigo-50 p-1 rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="fill: currentcolor;"><path fill="none" d="M0 0L24 0 24 24 0 24z"/><path d="M16 16c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM6 12c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm10 6c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1zM6 14c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm8.5-12C17.538 2 20 4.462 20 7.5S17.538 13 14.5 13 9 10.538 9 7.5 11.462 2 14.5 2zm0 2C12.567 4 11 5.567 11 7.5s1.567 3.5 3.5 3.5S18 9.433 18 7.5 16.433 4 14.5 4z"/></svg>
+                                </div>
+                                <div class="ml-3 flex flex-1 justify-between items-center">
+                                    <span class="text-sm font-medium">Цифровая очередь</span>
+                                    <span class="flex items-center border rounded text-xs px-2 py-1"><svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z"/></svg>10 секунд</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded shadow-md">
+                            <div class="p-5 flex justify-between items-center">
+                                <div class="text-indigo-600 bg-indigo-50 p-1 rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="fill: currentcolor;"><path fill="none" d="M0 0L24 0 24 24 0 24z"/><path d="M16 16c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM6 12c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm10 6c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1zM6 14c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm8.5-12C17.538 2 20 4.462 20 7.5S17.538 13 14.5 13 9 10.538 9 7.5 11.462 2 14.5 2zm0 2C12.567 4 11 5.567 11 7.5s1.567 3.5 3.5 3.5S18 9.433 18 7.5 16.433 4 14.5 4z"/></svg>
+                                </div>
+                                <div class="ml-3 flex flex-1 justify-between items-center">
+                                    <span class="text-sm font-medium">Открытие нового магазина</span>
+                                    <span class="text-xs font-medium bg-red-500 text-white px-2 py-1 rounded">ПРЯМОЙ ЭФИР</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded shadow-md">
+                            <div class="p-5 flex justify-between items-center">
+                                <div class="text-indigo-600 bg-indigo-50 p-1 rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="fill: currentcolor;"><path fill="none" d="M0 0L24 0 24 24 0 24z"/><path d="M16 16c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM6 12c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm10 6c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1zM6 14c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm8.5-12C17.538 2 20 4.462 20 7.5S17.538 13 14.5 13 9 10.538 9 7.5 11.462 2 14.5 2zm0 2C12.567 4 11 5.567 11 7.5s1.567 3.5 3.5 3.5S18 9.433 18 7.5 16.433 4 14.5 4z"/></svg>
+                                </div>
+                                <div class="ml-3 flex flex-1 justify-between items-center">
+                                    <span class="text-sm font-medium">Стоимость акций</span>
+                                    <span class="flex items-center border rounded text-xs px-2 py-1"><svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z"/></svg>1 секунда</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl block ">Используйте внешние сервисы.</span>
+                        <span class="text-xl text-gray-light-for-light block mt-4 ">Выводите в реальном времени на ваши экраны прямые трансляции, курсы валют, новости, погоду и другие данные, которые вам необходимо.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 inline-flex items-center hover:underline ">Подробнее об интеграциях <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+        "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-24 ">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 ">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl block ">Работайте вместе.</span>
+                        <span class="text-xl text-gray-light-for-light block mt-4 ">Пригласите ваших дизайнеров, маркетологов и технических специалистов. Количество пользователей не ограничено.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 inline-flex items-center hover:underline ">Подробнее о совместной работе <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+        "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center ">
+                    <div class="w-3/4 ">
+                        <div>
+                            <div class="flex items-center mb-3 ">
+                                <div class="bg-indigo-50 rounded p-2 ">
+                                    <svg class="text-indigo-700 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M4 22a8 8 0 1 1 16 0h-2a6
+        6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z "/></svg>
+                                </div>
+                                <span class="font-medium inline-block ml-3 ">Пользователи</span>
+                            </div>
+                            <div class="grid grid-cols-1 gap-0.5 mt-2 ">
+                                <div class="px-4 py-2 ">
+                                    <div class="flex items-center w-full justify-between ">
+                                        <div class="flex items-center ">
+                                            <div class="p-2 bg-dark-blue rounded-full ">
+                                                <span class="block text-white text-center leading-5 w-5 h-5 ">IS</span>
+                                            </div>
+                                            <div class="ml-4 text-sm ">
+                                                <div>
+                                                    <span class="font-medium ">Ivan Stolbovskiy</span>
+                                                </div>
+                                                <span class="text-xs text-gray-500 ">ivan@addreality.com</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs ">
+                                                <span class="px-2 py-1 mt-1.5 bg-gray-50 text-gray-800 rounded inline-block ">Владелец</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-4 ">
+                                    <div class="flex items-center w-full justify-between ">
+                                        <div class="flex items-center ">
+                                            <div class="p-2 bg-dark-blue rounded-full ">
+                                                <span class="block text-white text-center leading-5 w-5 h-5 ">IS</span>
+                                            </div>
+                                            <div class="ml-4 text-sm ">
+                                                <div>
+                                                    <span class="font-medium ">Ivan Stolbovskiy</span>
+                                                </div>
+                                                <span class="text-xs text-gray-500 ">ivan@addreality.com</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs ">
+                                                <span class="px-2 py-1 mt-1.5 bg-gray-50 text-gray-800 rounded inline-block ">Дизайнер</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center mb-4 mt-4 ">
+                                <div class="bg-indigo-50 rounded p-2 ">
+                                    <svg class="text-indigo-700 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="16 " height="16 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M14 14.252v2.09A6 6 0 0
+        0 6 22l-2-.001a8 8 0 0 1 10-7.748zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm6 6v-3h2v3h3v2h-3v3h-2v-3h-3v-2h3z "/></svg>
+                                </div>
+                                <span class=" text-sm font-medium block ml-3 ">Пригласить пользователя</span>
+                            </div>
+                            <div class="px-2 py-2 bg-white shadow-md rounded border text-sm ">
+                                <span class="bg-green-100 px-2 py-1 rounded inline-flex items-center ">success@addreality.com <svg class="ml-1 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="12 " height="12 "><path fill="none " d="M0
+        0h24v24H0z "/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z "/></svg></span>
+                            </div>
+                            <div class="text-right ">
+                                <div class="text-white text-sm bg-indigo-600 px-4 py-1 mt-4 rounded transition text-sm inline-block ">
+                                    Отправить приглашение
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24 bg-gray-50 ">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 ">
+            <div class="text-center mb-16 ">
+                <div>
+                    <span class="font-medium text-4xl block ">Управляйте правами доступа.</span>
+                    <span class="text-xl text-gray-light-for-light block mt-4 ">Позвольте пользователям использовать только те функции,<br> которые им разрешены.</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-4 gap-10 ">
+                <div class="bg-white rounded ">
+                    <div class="flex items-center p-5 justify-between ">
+                        <div class="flex items-center ">
+                            <div class="rounded-full bg-indigo-500 p-2 inline-block "></div>
+                            <span class="ml-3 ">Дизайнеры</span>
+                        </div>
+                        <div class="p-1 shadow rounded ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="18 " height="18 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1
+        8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm2.595 7.812a3.51 3.51 0 0 1 0-1.623l-.992-.573 1-1.732.992.573A3.496 3.496 0 0 1 17 14.645V13.5h2v1.145c.532.158 1.012.44 1.405.812l.992-.573
+        1 1.732-.992.573a3.51 3.51 0 0 1 0 1.622l.992.573-1 1.732-.992-.573a3.496 3.496 0 0 1-1.405.812V22.5h-2v-1.145a3.496 3.496 0 0 1-1.405-.812l-.992.573-1-1.732.992-.572zM18 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z "/></svg>
+                        </div>
+                    </div>
+                    <span class="uppercase text-xs font-medium text-gray-500 block p-4 pb-2 pt-2 ">Права доступа</span>
+                    <hr>
+                    <div class="p-5 grid grid-cols-1 gap-2 ">
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Загрузка контента</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Создание кампаний</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Создание шаблонов</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
+        4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z "/></svg>
+                            <span class="ml-3 text-sm ">Обновление контента на экранах</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
+        4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z "/></svg>
+                            <span class="ml-3 text-sm ">Удаление устройств</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
+        4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z "/></svg>
+                            <span class="ml-3 text-sm ">Приглашение пользователей</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded ">
+                    <div class="flex items-center p-5 justify-between ">
+                        <div class="flex items-center ">
+                            <div class="rounded-full bg-yellow-500 p-2 inline-block "></div>
+                            <span class="ml-3 ">Маркетинг</span>
+                        </div>
+                        <div class="p-1 shadow rounded ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="18 " height="18 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1
+        8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm2.595 7.812a3.51 3.51 0 0 1 0-1.623l-.992-.573 1-1.732.992.573A3.496 3.496 0 0 1 17 14.645V13.5h2v1.145c.532.158 1.012.44 1.405.812l.992-.573
+        1 1.732-.992.573a3.51 3.51 0 0 1 0 1.622l.992.573-1 1.732-.992-.573a3.496 3.496 0 0 1-1.405.812V22.5h-2v-1.145a3.496 3.496 0 0 1-1.405-.812l-.992.573-1-1.732.992-.572zM18 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z "/></svg>
+                        </div>
+                    </div>
+                    <span class="uppercase text-xs font-medium text-gray-500 block p-4 pb-2 pt-2 ">Права доступа</span>
+                    <hr>
+                    <div class="p-5 grid grid-cols-1 gap-2 ">
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Загрузка контента</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Создание кампаний</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Просмотр отчетов</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Обновление контента на экранах</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Удаление контента</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
+        4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z "/></svg>
+                            <span class="ml-3 text-sm ">Удаление устройств</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
+        4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z "/></svg>
+                            <span class="ml-3 text-sm ">Приглашение пользователей</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded ">
+                    <div class="flex items-center p-5 justify-between ">
+                        <div class="flex items-center ">
+                            <div class="rounded-full bg-blue-500 p-2 inline-block "></div>
+                            <span class="ml-3 ">IT отдел</span>
+                        </div>
+                        <div class="p-1 shadow rounded ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="18 " height="18 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1
+        8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm2.595 7.812a3.51 3.51 0 0 1 0-1.623l-.992-.573 1-1.732.992.573A3.496 3.496 0 0 1 17 14.645V13.5h2v1.145c.532.158 1.012.44 1.405.812l.992-.573
+        1 1.732-.992.573a3.51 3.51 0 0 1 0 1.622l.992.573-1 1.732-.992-.573a3.496 3.496 0 0 1-1.405.812V22.5h-2v-1.145a3.496 3.496 0 0 1-1.405-.812l-.992.573-1-1.732.992-.572zM18 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z "/></svg>
+                        </div>
+                    </div>
+                    <span class="uppercase text-xs font-medium text-gray-500 block p-4 pb-2 pt-2 ">Права доступа</span>
+                    <hr>
+                    <div class="p-5 grid grid-cols-1 gap-2 ">
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Добавление устройств</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Удаление устройств</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Отправка команд</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Доступ к мониторингу</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Приглашение пользователей</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-green-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M10 15.172l9.192-9.193 1.415 1.414L10
+        18l-6.364-6.364 1.414-1.414z "/></svg>
+                            <span class="ml-3 text-sm ">Назначение ролей</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <svg class="text-gray-500 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 " style="fill: currentcolor; "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
+        4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z "/></svg>
+                            <span class="ml-3 text-sm ">Работа с контентом</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded ">
+                    <div class="flex items-center p-5 justify-between ">
+                        <div class="flex items-center ">
+                            <div class="rounded-full bg-green-500 p-2 inline-block "></div>
+                            <span class="ml-3 ">Новая роль</span>
+                        </div>
+                        <div class="px-2 py-1 bg-indigo-600 text-white rounded text-xs uppercase font-medium ">
+                            сохранить
+                        </div>
+                    </div>
+                    <span class="uppercase text-xs font-medium text-gray-500 block p-4 pb-2 pt-2 ">Права доступа</span>
+                    <hr>
+                    <div class="p-5 grid grid-cols-1 gap-2 ">
+                        <div class="flex items-center ">
+                            <div class="inline-block h-6 w-6 rounded border "></div>
+                            <span class="ml-3 text-sm ">Загрузка контента</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <div class="inline-block h-6 w-6 rounded border "></div>
+                            <span class="ml-3 text-sm ">Создание кампаний</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <div class="inline-block h-6 w-6 rounded border "></div>
+                            <span class="ml-3 text-sm ">Доступ к мониторингу</span>
+                        </div>
+                        <div class="flex items-center ">
+                            <div class="inline-block h-6 w-6 rounded border "></div>
+                            <span class="ml-3 text-sm ">...</span>
+                        </div>
+                        <div class="text-center mt-6 ">
+                            <span class="ml-3 text-sm font-medium text-gray-light-for-light ">Выбирайте из 50+ различных прав доступа</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center ">
+            <a href=" " class="text-blue-600 text-lg mt-16 inline-flex items-center hover:underline ">Подробнее о правах доступа <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+        "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+        </div>
+    </div>
+    </div>
+    <div class="py-24 ">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 ">
+            <div class="grid grid-cols-2 space-x-10 ">
+                <div class="flex items-center ">
+                    <div>
+                        <span class="font-medium text-4xl block ">Будьте в курсе событий.</span>
+                        <span class="text-xl text-gray-light-for-light block mt-4 ">Просматривайте историю действий на платформе и устройствах. Получайте оповещения, если что-то пошло не так.</span>
+                        <a href=" " class="text-blue-600 text-lg mt-7 inline-flex items-center hover:underline ">Подробнее о мониторинге событий <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="22 " height="22 " style="fill: currentcolor;
+        "><path fill="none " d="M0 0h24v24H0z "/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z "/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex flex-col ">
+                        <div class="flex items-center mx-auto ">
+                            <span class="bg-indigo-600 text-white px-2 py-1 block rounded ">18:38</span>
+                            <div class="ml-4 py-4 px-5 rounded shadow-md flex bg-white ">
+                                <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 1l8.217 1.826a1 1 0 0 1 .783.976v9.987a6 6 0 0 1-2.672 4.992L12 23l-6.328-4.219A6
+        6 0 0 1 3 13.79V3.802a1 1 0 0 1 .783-.976L12 1zm0 2.049L5 4.604v9.185a4 4 0 0 0 1.781 3.328L12 20.597l5.219-3.48A4 4 0 0 0 19 13.79V4.604L12 3.05zM12 7a2 2 0 0 1 1.001 3.732L13 15h-2v-4.268A2 2 0 0 1 12 7z "/></svg>
+                                <span class="block ml-2 ">Пользователь вошел в платформу</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center mx-auto mt-12 ">
+                            <div class="mr-4 py-4 px-5 rounded shadow-md flex bg-white items-center relative ">
+                                <span class="absolute block right-2 -bottom-4 rounded bg-gray-700 text-white text-xs py-1 px-2 ">Отправлено email оповещение</span>
+                                <div>
+                                    <span class="block mr-2 ">Потеряно соединение с плеером</span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 18c.714 0 1.37.25 1.886.666L12 21l-1.886-2.334A2.987 2.987 0 0 1 12 18zM2.808
+        1.393l17.677 17.678-1.414 1.414-5.18-5.18A5.994 5.994 0 0 0 12 15c-1.428 0-2.74.499-3.77 1.332l-1.256-1.556a7.963 7.963 0 0 1 4.622-1.766L9 10.414a10.969 10.969 0 0 0-3.912 2.029L3.83 10.887A12.984 12.984 0 0 1 7.416 8.83L5.132 6.545a16.009 16.009
+        0 0 0-3.185 2.007L.689 6.997c.915-.74 1.903-1.391 2.952-1.942L1.393 2.808l1.415-1.415zM14.5 10.285l-2.284-2.283L12 8c3.095 0 5.937 1.081 8.17 2.887l-1.258 1.556a10.96 10.96 0 0 0-4.412-2.158zM12 3c4.285 0 8.22 1.497 11.31 3.997l-1.257 1.555A15.933
+        15.933 0 0 0 12 5c-.878 0-1.74.07-2.58.207L7.725 3.51C9.094 3.177 10.527 3 12 3z "/></svg>
+                            </div>
+                            <span class="bg-indigo-600 text-white px-2 py-1 block rounded ">19:13</span>
+                        </div>
+                        <div class="flex items-center mx-auto mt-14 ">
+                            <span class="bg-indigo-600 text-white px-2 py-1 block rounded ">22:49</span>
+                            <div class="ml-4 py-4 px-5 rounded shadow-md flex bg-white ">
+                                <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " width="24 " height="24 "><path fill="none " d="M0 0h24v24H0z "/><path d="M12 20h8v2h-8C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10a9.956 9.956 0 0 1-2
+        6h-2.708A8 8 0 1 0 12 20zm0-10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4z "/></svg>
+                                <span class="block ml-2 ">Загружено новое видео</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="py-24 bg-dark-blue ">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 grid grid-cols-2 items-center gap-10 ">
+            <div>
+                <span class="text-white text-4xl font-medium ">Вашей технической команде Addreality тоже понравится.</span>
+                <span class="text-xl text-gray-light block mt-4 ">Легко обслуживать. Детальные логи событий. Гибкие возможности. Полный контроль всех IoT устройств. Прямое оповещение о неполадках. P2P синхронизация.</span>
+                <a href=" " class="inline-block mt-10 text-white bg-indigo-700 px-5 py-2 rounded ">Подробнее для технических специалистов</a>
+            </div>
+            <div>
+                <img src="img/home-control-player.svg " alt=" " class="w-full ">
+            </div>
+        </div>
+    </div>
+    <div class="py-24 bg-gray-50 ">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 ">
+            <div class="text-center mb-16 ">
+                <span class="font-medium text-4xl block ">Экосистема сервисов.</span>
+                <span class="text-xl text-gray-light-for-light block mt-4 ">Дополнения к платформе,<br> которые помогут вам достичь большего.</span>
+            </div>
+            <div class="max-w-screen-lg mx-auto grid grid-cols-2 gap-10 ">
+                <div class="bg-white p-8 rounded ">
+                    <svg class="text-indigo-700 mb-4 " xmlns="http://www.w3.org/2000/svg " viewBox="00 0 14 15 " width="32 " height="32 " style="fill: currentcolor; "><path fill-rule="evenodd " clip-rule="evenodd " d="M4 3.20071C4 2.24734 4.67292 1.42654
+        5.60777 1.23952L11.6078 0.0395124C12.8453 -0.207985 14 0.738609 14 2.00069V10.0611C14 11.4419 12.8807 12.5611 11.5 12.5611H11C9.89543 12.5611 9 11.6657 9 10.5611C9 9.45657 9.89543 8.56112 11 8.56112H13V4.76113L5 6.36111V12.0611C5 13.4419 3.88071 14.5611
+        2.5 14.5611H2C0.895432 14.5611 0 13.6657 0 12.5611C0 11.4566 0.895432 10.5611 2 10.5611H4V3.20071ZM5.80388 2.22012L11.8039 1.0201C12.4227 0.896385 13 1.36965 13 2.00069V3.74129L5 5.34127V3.20071C5 2.72402 5.33646 2.31362 5.80388 2.22012ZM2 11.5611H4V12.0611C4
+        12.8895 3.32843 13.5611 2.5 13.5611H2C1.44772 13.5611 1 13.1134 1 12.5611C1 12.0088 1.44772 11.5611 2 11.5611ZM13 9.56112H11C10.4477 9.56112 10 10.0088 10 10.5611C10 11.1134 10.4477 11.5611 11 11.5611H11.5C12.3284 11.5611 13 10.8895 13 10.0611V9.56112Z "></path></svg>
+                    <span class="block text-2xl font-bold mb-1 ">Addreality Sound</span>
+                    <span class="block text-lg text-gray-light-for-light mb-4 ">Удаленно управляйте фоновой музыкой, оповещениями и аудиорекламой.</span>
+                    <a href=" " class="text-blue-600 ">Узнать больше об Addreality Sound</a>
+                </div>
+                <div class="bg-white p-8 rounded">
+                    <svg class="text-indigo-700 mb-4 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 18 18 " width="32 " height="32 " style="fill: currentcolor; "><path d="M3.5 0C1.567 0 0 1.567 0 3.5H1C1 2.11929 2.11929 1 3.5 1V0Z
+        "></path><path d="M0 14.5C0 16.433 1.567 18 3.5 18V17C2.11929 17 1 15.8807 1 14.5H0Z "></path><path d="M18 14.5C18 16.433 16.433 18 14.5 18V17C15.8807 17 17 15.8807 17 14.5H18Z "></path><path d="M18 3.5C18 1.567 16.433 0 14.5 0V1C15.8807 1 17 2.11929 17 3.5H18Z
+        "></path><path d="M7.75 11C7.75 11.4142 7.41421 11.75 7 11.75C6.58579 11.75 6.25 11.4142 6.25 11C6.25 10.5858 6.58579 10.25 7 10.25C7.41421 10.25 7.75 10.5858 7.75 11Z "></path><path d="M11 11.75C11.4142 11.75 11.75 11.4142 11.75 11C11.75 10.5858 11.4142 10.25 11
+        10.25C10.5858 10.25 10.25 10.5858 10.25 11C10.25 11.4142 10.5858 11.75 11 11.75Z "></path><path fill-rule="evenodd " clip-rule="evenodd " d="M4.02905 9.05817C2.98259 8.55827 2.45221 7.59691 2.20426 6.67133C1.95042 5.72378 1.96999 4.74265 2.06584 4.11663C2.09474
+        3.92788 2.22862 3.77208 2.41087 3.71509C2.59311 3.65811 2.7919 3.7099 2.92318 3.84856C3.1968 4.13758 3.66045 4.41534 4.25698 4.42093C4.84494 4.42643 5.64411 4.16779 6.59322 3.23023C7.98555 1.85485 9.68929 1.80255 10.989 2.25476C11.6341 2.47921 12.1992
+        2.83287 12.5997 3.23168C12.8625 3.49337 13.1027 3.82533 13.1966 4.1872C13.4083 4.26885 13.6061 4.39973 13.7802 4.55531C14.0849 4.82757 14.3591 5.21081 14.5693 5.68101C14.9915 6.62575 15.1694 7.95114 14.7972 9.56004C14.7598 9.7218 14.6445 9.85443 14.4896
+        9.91403C14.3298 9.97548 14.1655 10.0059 14 9.99906V11.8488C14 14.6781 11.7769 17 9 17C6.22313 17 4 14.6781 4 11.8488V9.61629C4 9.42784 4.00984 9.24162 4.02905 9.05817ZM12.9952 9.40992C12.9984 9.47826 13 9.54706 13 9.61629V11.8488C13 14.1572 11.1937
+        16 9 16C6.8063 16 5 14.1572 5 11.8488V9.61629C5 9.54722 5.00162 9.47856 5.00483 9.41037C6.97022 9.91995 8.41526 9.08051 9.3401 8.54325C9.38594 8.51663 9.43062 8.49067 9.4739 8.46573C10.608 7.81219 11.3201 7.86226 11.7522 8.0401C12.2124 8.22953 12.4928
+        8.61815 12.6496 8.88923C12.7508 9.06413 12.8643 9.24587 12.9952 9.40992ZM13.9316 8.76289C13.9283 8.74232 13.9249 8.7218 13.9213 8.70131L13.7364 8.73351C13.6701 8.64356 13.5969 8.52973 13.5153 8.38853C13.3213 8.05324 12.9003 7.43126 12.1328 7.11538C11.3373
+        6.78792 10.2957 6.83799 8.97461 7.5993L8.85857 7.66638C7.81442 8.27094 6.47166 9.0484 4.51642 8.18177C3.79356 7.86137 3.38058 7.19792 3.1702 6.41257C3.05384 5.97822 3.0064 5.52846 3.0006 5.12528C3.35442 5.29978 3.77395 5.41645 4.24762 5.42088C5.16774
+        5.42949 6.21002 5.0144 7.29598 3.94165C8.35887 2.8917 9.63647 2.84297 10.6604 3.19923C11.1772 3.37902 11.6096 3.65697 11.8941 3.94029C12.2032 4.24805 12.2461 4.46249 12.2371 4.52498C12.2163 4.66859 12.2589 4.81413 12.3539 4.92382C12.4489 5.03352 12.5868
+        5.09655 12.7319 5.09655C12.7847 5.09655 12.9231 5.13044 13.1139 5.30097C13.2969 5.4645 13.4938 5.7255 13.6563 6.08902C13.9346 6.71175 14.1014 7.61464 13.9316 8.76289Z "></path></svg>
+                    <span class="block text-2xl font-bold mb-1 ">Addreality Camera</span>
+                    <span class="block text-lg text-gray-light-for-light mb-4 ">Анализируйте аудиторию с помощью искусственного интеллекта. И не только.</span>
+                    <a href=" " class="text-blue-600 ">Узнать больше об Addreality Camera</a>
+                </div>
+                <div class="bg-white p-8 rounded ">
+                    <svg class="mb-4 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 18 18 " width="32 " height="32 "><circle cx="9 " cy="9.00006 " r="9 " fill="#0023FF "></circle><path fill-rule="evenodd " clip-rule="evenodd " d="M10.0214 10.3602C9.83066
+        10.8141 9.56684 11.2034 9.22851 11.5303C8.879 11.8572 8.46688 12.1209 7.99143 12.3C7.50479 12.4894 6.97642 12.5845 6.3944 12.5845H4.01562V5.20667H6.3944C6.97642 5.20667 7.50479 5.30101 7.99143 5.4808C8.46688 5.67024 8.879 5.93397 9.22851 6.26011C9.56684
+        6.58699 9.83066 6.97702 10.0214 7.43019C10.2115 7.88337 10.3069 8.36849 10.3069 8.89521C10.3069 9.42268 10.2115 9.90706 10.0214 10.3602ZM8.99525 7.80982C8.85813 7.48294 8.67853 7.19841 8.43558 6.95622C8.19189 6.72443 7.89604 6.54539 7.54727 6.40795C7.1985
+        6.27125 6.81769 6.20811 6.3944 6.20811H5.12602V11.5831H6.3944C6.81769 11.5831 7.1985 11.5199 7.54727 11.3832C7.89604 11.2562 8.19189 11.0771 8.43558 10.8349C8.6681 10.5928 8.85813 10.3075 8.99525 9.98135C9.13312 9.65447 9.19646 9.28524 9.19646 8.89521C9.19646
+        8.50519 9.13312 8.1367 8.99525 7.80982ZM10.5356 11.6566C10.6518 11.5407 10.8106 11.4776 10.9902 11.4776C11.1698 11.4776 11.3285 11.5407 11.4448 11.6566C11.561 11.7733 11.6244 11.9308 11.6244 12.1105C11.6244 12.2896 11.561 12.4478 11.4448 12.5637C11.3285
+        12.6796 11.1698 12.7428 10.9902 12.7428C10.8106 12.7428 10.6518 12.6796 10.5356 12.5637C10.4193 12.4478 10.3552 12.2896 10.3552 12.1105C10.3552 11.9308 10.4193 11.7733 10.5356 11.6566ZM12.7555 12.6015V7.00669C12.6816 7.07002 12.576 7.1228 12.4599
+        7.16503C12.3649 7.20725 12.2276 7.23892 12.0693 7.27059C11.911 7.30226 11.7104 7.32337 11.4887 7.32337V6.47887C11.6682 6.47887 11.8476 6.43665 12.0165 6.36275C12.1749 6.28886 12.3227 6.19385 12.4493 6.07773C12.576 5.96161 12.6816 5.83494 12.7555 5.67659C12.8294
+        5.52881 12.861 5.37046 12.861 5.21212H13.8639V12.6015H12.7555Z " fill="white "></path></svg>
+                    <span class="block text-2xl font-bold mb-1 ">Addreality x Dooh.one</span>
+                    <span class="block text-lg text-gray-light-for-light mb-4 ">Напрямую продавайте рекламу на ваших экранах.</span>
+                    <a href=" " class="text-blue-600 ">Узнать больше об интеграции с Dooh.one</a>
+                </div>
+                <div class="bg-white p-8 rounded ">
+                    <svg class="text-indigo-700 mb-4 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 18 19 " width="32 " height="32 " style="fill: currentcolor; "><path fill-rule="evenodd " clip-rule="evenodd " d="M0.000725446 18.0005L0.000725403
+        13.8314C0.000725214 13.2996 0.212518 12.7897 0.589289 12.4144L3.53262 9.48261L0.581637 6.51939C-0.193879 5.74066 -0.193879 4.47809 0.581638 3.69936L2.68793 1.58433C3.46345 0.805596 4.72081 0.805596 5.49633 1.58433L8.46711 4.56743L11.5162 1.53028C12.2977
+        0.751847 13.5619 0.753086 14.3419 1.53305L16.4826 3.67375C17.2571 4.44828 17.2645 5.70175 16.4992 6.48537L13.468 9.58903L16.4184 12.5516C17.1939 13.3304 17.1939 14.593 16.4184 15.3717L14.3121 17.4867C13.5365 18.2654 12.2792 18.2654 11.5037 17.4867L8.60118
+        14.5722L5.84141 17.3979C5.46507 17.7833 4.94922 18.0005 4.41059 18.0005H0.000725446ZM15.7754 4.38086L13.6347 2.24016C13.2448 1.85018 12.6127 1.84956 12.2219 2.23877L10.5807 3.87358L14.1582 7.45109L15.7838 5.78667C16.1664 5.39486 16.1627 4.76812 15.7754
+        4.38086ZM1.29501 13.1229L9.87219 4.5793L13.4594 8.16655L5.126 16.6992C4.93783 16.8919 4.67991 17.0005 4.41059 17.0005H1.00073L1.00073 13.8314C1.00073 13.5655 1.10662 13.3106 1.29501 13.1229ZM9.29643 13.8603L12.2058 16.7817C12.5935 17.1711 13.2222
+        17.1711 13.61 16.7817L15.7163 14.6667C16.104 14.2773 16.104 13.646 15.7163 13.2567L15.3343 12.8731L13.8536 14.3539L13.1465 13.6468L14.6287 12.1646L13.3385 10.869L11.8536 12.3539L11.3042 11.8045L9.29643 13.8603ZM5.14837 2.64495L4.79423 2.28934C4.40647
+        1.89997 3.77779 1.89997 3.39003 2.28934L1.28374 4.40437C0.895978 4.79373 0.895978 5.42502 1.28374 5.81439L4.23755 8.78044L6.26282 6.7631L5.64648 6.14676L7.1442 4.64905L5.85402 3.35352L4.35359 4.85395L3.64648 4.14684L5.14837 2.64495Z "></path></svg>
+                    <span class="block text-2xl font-bold mb-1 ">Addreality Designer</span>
+                    <span class="block text-lg text-gray-light-for-light mb-4 ">Функциональный визуальный редактор шаблонов. Реализуйте любые идеи.</span>
+                    <a href=" " class="text-blue-600 ">Узнать больше об Addreality Designer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-24">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 ">
+            Здесь CTA типа регистрируйтесь и т.д. Так как он будет почти везде на сайте, над ним надо думать, как красиво сделать и чтобы сочетался.
+        </div>
+    </div>
+    <div class="py-24 bg-black text-white">
+        <div class="container xl:max-w-screen-xl mx-auto px-4 ">
+            А здесь футер, их я не люблю делать, поэтому пока пусто будет
+        </div>
+    </div>
+
+
+    <script src="bundle.js "></script>
+</body>
+
+</html>
